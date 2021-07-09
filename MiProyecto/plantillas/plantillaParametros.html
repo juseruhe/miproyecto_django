@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla con Parámetros</title>
+    <style>
+li{
+
+    color: blue;
+}
+    </style>
+</head>
+<body>
+
+    <h1>Nombre de Canal: {{nombreCanal}}</h1>
+    <h2>{{fechaActual.day}}/{{fechaActual.month}}/{{fechaActual.year}}</h2>
+
+    {# Número de lenguajes #}
+    <h3>N° de Lenguajes: {{lenguajes|length}}</h3>
+
+    <ul>
+{% for lenguaje in lenguajes %}
+
+{% if lenguaje == 'PHP' %}
+<li style="color: orangered">{{lenguaje}}</li>
+{% else %}
+<li>{{lenguaje|first}} :{{lenguaje|lower}}</li>
+{% endif %}
+
+{% endfor%}
+    </ul>
+
+    {% comment %}
+
+Este
+es
+comentario
+de 
+lineas
+
+    {% endcomment %}
+    
+</body>
+</html>
+
